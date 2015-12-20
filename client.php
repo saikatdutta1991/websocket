@@ -17,12 +17,32 @@
 			</div>
 			
 			<div class="row">
-			    <div class="col-xs-8">
+			    <div class="col-xs-8" id = "message-container">
 			    	<div  id = "message-body">
-			    		<h3>Column 1</h3>
+					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
+					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
+					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
+					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
+					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
+					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
+					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
 					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
 					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
 			    	</div>
+			    	
+			    	<div class="input-group" id = "message-field">
+                		<input id="uploadname" type="text" class="form-control input-lg">
+                		<span class="input-group-btn">
+        					<button class="inline input-lg btn btn-primary" type="button">Send</button>
+      					</span>
+                		
+            		</div>
+
 			    </div>
 			    <div class="col-xs-4 user" >
 			      <div id = "list">
@@ -77,9 +97,16 @@
 
 	<style type="text/css">
 	.jumbotron {
-    padding-top: 1px;
-    padding-bottom: 5px;
-}
+	    padding-top: 1px;
+	    padding-bottom: 5px;
+		margin-bottom : -5px;
+	}
+
+	.row {
+	    margin-right: -10px;
+	    margin-left: -10px;
+	}
+
 	.row > div{
 	    margin-top:10px;
 	    padding: 20px;
@@ -87,10 +114,23 @@
 	    outline-offset: -10px;
 	    -moz-outline-radius: 10px;
 	    -webkit-outline-radius: 10px;
+	    
+	
+ 	}
+
+ 	#message-container {
+ 		height:  450px !Important;
+ 	}
+
+ 	#message-field{
+ 		margin-top: 10px;
  	}
 
  	#message-body {
- 		height:  100% !Important;
+ 		height: 354px !Important;
+ 		overflow-y : scroll;
+ 		border-style: double;
+ 		border-color: rgba(0, 220, 255, 0.62);
  	}
 
  	.user{

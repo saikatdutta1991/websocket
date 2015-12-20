@@ -44,17 +44,28 @@ class echoServer extends WebSocketServer
   {
       $msg = json_decode($message, true);
       
-      switch($msg['mode'])
+      switch($msg['Mode'])
       {
         case 'set' :
-                    $this->usersList[ $msg['name'] ] = $user;
+                    $this->usersList[ $msg['Id'] ] = $user;
                     break;
 
         case 'post' : 
-                      $to = $msg['to'];
-                      $txt = $msg['message'];
+                      $to = $msg['To'];
+                      $from = $msg['From'];
+                      $txt = $msg['Message'];
 
-                      $this->send($this->usersList[$to], $txt);
+                      $arry = array(
+                        'From' => $from,
+                        'To' => $to,
+                        'Message' => $txt,
+                      );
+
+                      $json = json_encode($arry);
+
+                      if(isset($this->usersList[$to]))
+                        $this->send($this->usersList[$to], $json);
+
                       break;
       }
   }
@@ -66,12 +77,12 @@ class echoServer extends WebSocketServer
   
   protected function closed ($user) 
   {
-    $this->stdout('client gone off');
+    
   }
 
 }
 
-$echo = new echoServer("192.160.11.109","9003");
+$echo = new echoServer("192.160.11.106","9050");
 
 try 
 {

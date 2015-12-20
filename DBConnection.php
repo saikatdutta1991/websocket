@@ -57,3 +57,20 @@ function doLogin($email, $password, &$data)
     	return false;
 	}
 }
+
+
+function getAll()
+{
+    $sql = 'SELECT * FROM user';
+
+    $result = $GLOBALS['conn']->query($sql);
+
+    if ($result->num_rows > 0) 
+    {
+        return $result;
+    } 
+    else 
+    {
+        return false;
+    }   
+}

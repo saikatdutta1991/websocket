@@ -1,3 +1,10 @@
+<?php 
+session_start(); 
+require_once 'checkLogin.php';
+require 'DBConnection.php';
+$result = getAll();
+//$row = $result->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <html>
@@ -10,7 +17,7 @@
 
 	</head>
 	
-	<body onload="">
+	<body onload="init()">	
 		
 		<div class="container-fluid">
 			<div class="jumbotron text-center">
@@ -25,31 +32,7 @@
 			    	</div>
 			    	<div  id = "message-body">
 			    		
-			    		
-			    			<p class = "to pull-right">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p>
-			    		
-						    
-						
-					    	<p class = "from pull-left">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p> 
 
-
-
-					    	<p class = "to pull-right">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p>
-			    		
-						    
-						
-					    	<p class = "from pull-left">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p> 
-					    	<p class = "to pull-right">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p>
-			    		
-						    
-						
-					    	<p class = "from pull-left">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p> 
-					    	<p class = "to pull-right">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p>
-			    		
-						    
-						
-					    	<p class = "from pull-left">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p>  
-					    
 
 			    	</div>
 			    	
@@ -65,25 +48,21 @@
 			    </div>
 			    <div class="col-xs-4 user" >
 			      <div id = "list">
-				      <a href="#" class = "item-link"><input type = "hidden" value = "10">
-				      	<div class = "item">
-				      	<img src="images/item.png" class = "img-circle pull-left">
-				      	<h3 class = "text-primary name">Saikat Dutta</h3>
-				      </div></a>
+				      
+				      <?php 
 
+				      	while($row = $result->fetch_assoc())
+				      	{
+				      		if($row['id'] != $_SESSION['id'])
+				      		echo '<a href="#" class = "item-link"><input type = "hidden" value = "'. $row['id'] .'">
+				      				<div class = "item">
+				      					<img src="images/item.png" class = "img-circle pull-left">
+				      					<h3 class = "text-primary name">'. $row['name'] .'</h3>
+				      			</div></a>';
+				      	}
 
-				      <a href="#" class = "item-link"><input type = "hidden" value = "14">
-				      	<div class = "item">
-				      	<img src="images/item.png" class = "img-circle pull-left">
-				      	<h3 class = "text-primary name">Saikat Dutta</h3>
-				      </div></a>
+				      ?>
 
-
-				      <a href="#" class = "item-link"><input type = "hidden" value = "23">
-				      	<div class = "item">
-				      	<img src="images/item.png" class = "img-circle pull-left">
-				      	<h3 class = "text-primary name">Saikat Dutta</h3>
-				      </div></a>
 				      
 			      </div>
 			    </div>
@@ -221,13 +200,13 @@
 
 		function init() 
 		{
-			var host = "ws://192.160.11.109:9003"; // SET THIS TO YOUR SERVER
+			var host = "ws://192.160.11.106:9050"; // SET THIS TO YOUR SERVER
 			try 
 			{
 				socket = new WebSocket(host);
 				log('WebSocket - status '+socket.readyState);
 				socket.onopen    = function(msg) { 
-										var json_msg = '{"mode" : "set", "id" : ""}';
+										var json_msg = '{"Mode" : "set", "Id" : "<?= $_SESSION['id']?>"}';
 									   	socket.send(json_msg);
 								   };
 				socket.onmessage = function(msg) { 
@@ -236,7 +215,7 @@
 										if(message['From'] == document.getElementById('to').value)
 										{
 											var p = document.createElement('p');
-											p.textContent	 =  msg.data;
+											p.textContent	 =  message['Message'];
 											p.setAttribute('class', 'from pull-left');
 
 											document.getElementById('message-body').appendChild(p);

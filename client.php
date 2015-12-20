@@ -3,7 +3,7 @@
 <html lang="en">
 <html>
 	<head>
-	<title>WebSocket</title>
+	<title>WebSocket Chat</title>
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 

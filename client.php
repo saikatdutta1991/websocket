@@ -1,4 +1,3 @@
-<?php session_start(); require_once 'checkLogin.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <html>
@@ -6,6 +5,8 @@
 	<title>WebSocket Chat</title>
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 	</head>
 	
@@ -53,9 +54,10 @@
 			    	</div>
 			    	
 			    	<div class="input-group" id = "message-field">
-                		<input id="uploadname" type="text" class="form-control input-lg">
+                		<input id="msg" type="text" class="form-control input-lg">
+                		<input id="to" type="hidden" value="">
                 		<span class="input-group-btn">
-        					<button class="inline input-lg btn btn-primary" type="button">Send</button>
+        					<button class="inline input-lg btn btn-primary" id="send" onclick="send();" type="button">Send</button>
       					</span>
                 		
             		</div>
@@ -63,33 +65,25 @@
 			    </div>
 			    <div class="col-xs-4 user" >
 			      <div id = "list">
-				      <a href="" class = "item-link"><div class = "item">
+				      <a href="#" class = "item-link"><input type = "hidden" value = "10">
+				      	<div class = "item">
 				      	<img src="images/item.png" class = "img-circle pull-left">
 				      	<h3 class = "text-primary name">Saikat Dutta</h3>
 				      </div></a>
 
-				      <a href="" class = "item-link"><div class = "item">
-				      	<img src="images/item.png" class = "img-circle pull-left">
-				      	<h3 class = "text-primary name">Saikat Dutta</h3>
-				      </div></a>
-				      <a href="" class = "item-link"><div class = "item">
-				      	<img src="images/item.png" class = "img-circle pull-left">
-				      	<h3 class = "text-primary name">Saikat Dutta</h3>
-				      </div></a>
-				      <a href="" class = "item-link"><div class = "item">
-				      	<img src="images/item.png" class = "img-circle pull-left">
-				      	<h3 class = "text-primary name">Saikat Dutta</h3>
-				      </div></a>
-				      <a href="" class = "item-link"><div class = "item">
-				      	<img src="images/item.png" class = "img-circle pull-left">
-				      	<h3 class = "text-primary name">Saikat Dutta</h3>
-				      </div></a>
-				      <a href="" class = "item-link"><div class = "item">
+
+				      <a href="#" class = "item-link"><input type = "hidden" value = "14">
+				      	<div class = "item">
 				      	<img src="images/item.png" class = "img-circle pull-left">
 				      	<h3 class = "text-primary name">Saikat Dutta</h3>
 				      </div></a>
 
-				      
+
+				      <a href="#" class = "item-link"><input type = "hidden" value = "23">
+				      	<div class = "item">
+				      	<img src="images/item.png" class = "img-circle pull-left">
+				      	<h3 class = "text-primary name">Saikat Dutta</h3>
+				      </div></a>
 				      
 			      </div>
 			    </div>
@@ -148,8 +142,12 @@
 	}
 
 	.item:hover, .item:hover > .text-primary{
+		height: 90px;
+		border-radius: 6px;
 		background-color: #337AB7;
 		color: white !Important;
+		margin-right: 10px;
+    	margin-bottom: -12px;
 	}
 
 
@@ -215,7 +213,7 @@
 
 	</style>
 
-	<script src="js/jquery.min.js"></script>
+	
   	<script src="js/bootstrap.min.js"></script>
 	
 	<script type="text/javascript">
@@ -229,11 +227,25 @@
 				socket = new WebSocket(host);
 				log('WebSocket - status '+socket.readyState);
 				socket.onopen    = function(msg) { 
-										var json_msg = '{"mode" : "set", "name" : ""}';
+										var json_msg = '{"mode" : "set", "id" : ""}';
 									   	socket.send(json_msg);
 								   };
 				socket.onmessage = function(msg) { 
-									   log("Received: "+msg.data); 
+										var message = JSON.parse(msg.data);
+
+										if(message['From'] == document.getElementById('to').value)
+										{
+											var p = document.createElement('p');
+											p.textContent	 =  msg.data;
+											p.setAttribute('class', 'from pull-left');
+
+											document.getElementById('message-body').appendChild(p);
+										}	
+										else{
+											var pop_msg = msg.data;
+											alert(pop_msg);
+										}
+								
 								   };
 				socket.onclose   = function(msg) { 
 									   log("Disconnected - status "+this.readyState); 
@@ -248,26 +260,38 @@
 
 		function send()
 		{
-			var txt,msg;
-			txt = $("msg");
-			msg = txt.value;
-			if(!msg) 
+			var msg;
+
+			msg = document.getElementById('msg');
+			
+			if(!msg.value) 
 			{ 
 				alert("Message can not be empty"); 
 				return; 
 			}
 
-			txt.value="";
-			txt.focus();
 			try 
 			{ 
-				var to = $("to").value;
-				var json_msg = '{"mode" : "post", "to" : "'+ to +'", "message" : "'+ msg +'"}';
+				var to = document.getElementById('to').value;
+
+				var json_msg = '{"Mode" : "post", "To" : "'+ to +'", "Message" : "'+ msg.value +'", "From" : "<?= $_SESSION['id'] ?>"}';
+				
 				socket.send(json_msg); 
-				log('Sent: '+msg); 
+
+				var p = document.createElement('p');
+				p.textContent	 =  msg.value;
+				p.setAttribute('class', 'to pull-right');
+
+				document.getElementById('message-body').appendChild(p);
+
+
+				msg.value="";
+				msg.focus();
+
+
 			} catch(ex) 
 			{ 
-				log(ex); 
+				console.log(ex); 
 			}
 		}
 
@@ -287,9 +311,26 @@
 		}
 
 		// Utilities
-		function $(id){ return document.getElementById(id); }
+		//function $(id){ return document.getElementById(id); }
 		function log(msg){ $("log").innerHTML+="<br>"+msg; }
 		function onkey(event){ if(event.keyCode==13){ send(); } }
+
+		
+	</script>
+
+
+	<script>
+		 $(document).ready(function(){
+  			$('.item-link').click(function(){
+  				
+  				$('#to').val($(this).children('input').val());  
+
+    			$('.to').detach();
+    			$('.from').detach();
+    			return false;
+  			});
+		});
+
 	</script>
 
 </html>

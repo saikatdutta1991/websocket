@@ -28,7 +28,7 @@ $result = getAll();
 			<div class="row">
 			    <div class="col-xs-8" id = "message-container">
 			    	<div class = "chat-with">
-			    		<h5>Saikat Dutta</h5>
+			    		<h5>Inbox</h5>
 			    	</div>
 			    	<div  id = "message-body">
 			    		

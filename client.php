@@ -18,21 +18,37 @@
 			
 			<div class="row">
 			    <div class="col-xs-8" id = "message-container">
+			    	<div class = "chat-with">
+			    		<h5>Saikat Dutta</h5>
+			    	</div>
 			    	<div  id = "message-body">
-					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
-					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
-					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
-					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
-					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
-					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
-					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...Lorem ipsum dolor sit amet, consectetur adipisicing elit...v</p>
-					      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+			    		
+			    		
+			    			<p class = "to pull-right">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p>
+			    		
+						    
+						
+					    	<p class = "from pull-left">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p> 
+
+
+
+					    	<p class = "to pull-right">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p>
+			    		
+						    
+						
+					    	<p class = "from pull-left">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p> 
+					    	<p class = "to pull-right">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p>
+			    		
+						    
+						
+					    	<p class = "from pull-left">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p> 
+					    	<p class = "to pull-right">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p>
+			    		
+						    
+						
+					    	<p class = "from pull-left">Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.Not sure how you'd do it with transitions, but you'd have to put the same selector at least.<p>  
+					    
+
 			    	</div>
 			    	
 			    	<div class="input-group" id = "message-field">
@@ -46,40 +62,34 @@
 			    </div>
 			    <div class="col-xs-4 user" >
 			      <div id = "list">
-				      <h3>Column 2</h3>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-				      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-				      <h3>Column 2</h3>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-				      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-				      <h3>Column 2</h3>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-				      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-				      <h3>Column 2</h3>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-				      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-				      <h3>Column 2</h3>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-				      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-				      <h3>Column 2</h3>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-				      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-				      <h3>Column 2</h3>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-				      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-				      <h3>Column 2</h3>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-				      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-				      <h3>Column 2</h3>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-				      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+				      <a href="" class = "item-link"><div class = "item">
+				      	<img src="images/item.png" class = "img-circle pull-left">
+				      	<h3 class = "text-primary name">Saikat Dutta</h3>
+				      </div></a>
 
-				      <h3>Column 2</h3>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-				      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-				      <h3>Column 2</h3>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-				      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+				      <a href="" class = "item-link"><div class = "item">
+				      	<img src="images/item.png" class = "img-circle pull-left">
+				      	<h3 class = "text-primary name">Saikat Dutta</h3>
+				      </div></a>
+				      <a href="" class = "item-link"><div class = "item">
+				      	<img src="images/item.png" class = "img-circle pull-left">
+				      	<h3 class = "text-primary name">Saikat Dutta</h3>
+				      </div></a>
+				      <a href="" class = "item-link"><div class = "item">
+				      	<img src="images/item.png" class = "img-circle pull-left">
+				      	<h3 class = "text-primary name">Saikat Dutta</h3>
+				      </div></a>
+				      <a href="" class = "item-link"><div class = "item">
+				      	<img src="images/item.png" class = "img-circle pull-left">
+				      	<h3 class = "text-primary name">Saikat Dutta</h3>
+				      </div></a>
+				      <a href="" class = "item-link"><div class = "item">
+				      	<img src="images/item.png" class = "img-circle pull-left">
+				      	<h3 class = "text-primary name">Saikat Dutta</h3>
+				      </div></a>
+
+				      
+				      
 			      </div>
 			    </div>
 			</div>
@@ -96,6 +106,58 @@
 	</body>
 
 	<style type="text/css">
+
+	.to{
+		width: 80%;
+		background-color: red;
+		padding: 10px;
+	}
+
+	.from{
+		width: 80%;
+		padding: 10px;
+		background-color: green;
+	}
+
+	
+
+	.chat-with{
+		margin-top: -10px;
+    background-color: rgb(238, 238, 238);
+    padding: 1px;
+    margin-left: -11px;
+    margin-right: -11px;
+	}
+	.img-circle{
+		border-radius: 100%;
+		padding: 5px;
+	}
+
+
+	.item{
+		height: 90px;
+		border-radius: 6px;
+    	background-color: rgb(238, 238, 238);
+    	margin-right: 10px;
+    	margin-bottom: -12px;
+	}
+
+	.item-link{
+		text-decoration: none !Important;
+	}
+
+	.item:hover, .item:hover > .text-primary{
+		background-color: #337AB7;
+		color: white !Important;
+	}
+
+
+	.name{
+		padding-top: 34px;
+    	padding-left: 99px;
+	}
+
+
 	.jumbotron {
 	    padding-top: 1px;
 	    padding-bottom: 5px;
@@ -123,14 +185,18 @@
  	}
 
  	#message-field{
- 		margin-top: 10px;
+ 		margin-left: -11px;
+    	margin-right: -11px;
  	}
 
  	#message-body {
- 		height: 354px !Important;
+ 		height: 349px !Important;
  		overflow-y : scroll;
- 		border-style: double;
- 		border-color: rgba(0, 220, 255, 0.62);
+ 		border-radius: 5px;
+ 		margin-left: -11px;
+    	margin-right: -11px;
+ 		/*border-style: solid;*/
+ 		/*border-color: rgba(0, 220, 255, 0.62);*/
  	}
 
  	.user{
@@ -141,7 +207,7 @@
  	#list {
  		height: 400px;
     	overflow-y: scroll;
-
+    	margin-top: -7px;
  	}
  	
 

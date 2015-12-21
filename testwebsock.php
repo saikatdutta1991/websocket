@@ -82,7 +82,7 @@ class echoServer extends WebSocketServer
 
 }
 
-$echo = new echoServer("192.160.11.106","9050");
+$echo = new echoServer("192.160.11.1","9050");
 
 try 
 {
